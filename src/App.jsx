@@ -3,8 +3,8 @@ import Navbar from "./components/Navbar";
 import Textform from "./components/Textform";
 import Alert from "./components/Alert";
 
-// import About from "./components/About";
-// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import About from "./components/About";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [mode, setbtnmode] = useState("light");
@@ -33,8 +33,8 @@ function App() {
     }
   };
   return (
-    <>
-     
+  <>  
+{/*      
           <Navbar title="Text-Utils" mode={mode} togglemode={togglemode} />
           <Alert alert={alert} />
 
@@ -42,30 +42,30 @@ function App() {
           
             <Textform mode={mode} showalert={showalert} />
           
-      
-    </>
+       */}
+  
  
-  //   <>
-  //   <Router>
-  //   <Navbar title="Text-Utils" mode={mode} togglemode={togglemode} />
-  //     <Alert alert={alert} />
-  //     <div className="container my-4" mode={mode}>
-  //       <Routes>
-  //         <Route exact path="/about" element={<About />}></Route>
-  //         <Route
-  //           exact path="/"
-  //           element={
-  //             <Textform
-  //             showalert={showalert}
-  //               heading="Enter Text to analyze "
-  //               mode={mode}
-  //             />
-  //           }
-  //         ></Route>
-  //       </Routes>
-  //     </div>
-  //   </Router>
-  // </>
+  
+    <Router>
+    <Navbar title="Text-Utils" mode={mode} togglemode={togglemode} />
+      <Alert alert={alert} />
+      <div className="container my-4" mode={mode}>
+        <Routes>
+          <Route exact path="/about" element={<About mode={mode}/>}></Route>
+          <Route
+            exact path="/"
+            element={
+              <Textform
+              showalert={showalert}
+                heading="Enter Text to analyze "
+                mode={mode}
+              />
+            }
+          ></Route>
+        </Routes>
+      </div>
+    </Router>
+  </>
  
  
  
